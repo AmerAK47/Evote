@@ -1,0 +1,130 @@
+{% extends 'user.html.twig' %}
+
+{% block title %}Login{% endblock %}
+
+{% block body %}
+
+
+
+    <style>
+
+        .background-radial-gradient {
+          background-color: hsl(218, 100%, 15%);
+          background-image: radial-gradient(650px circle at 0% 0%,
+              hsl(218, 41%, 35%) 15%,
+              hsl(218, 41%, 30%) 35%,
+              hsl(218, 41%, 20%) 75%,
+              hsl(218, 41%, 19%) 80%,
+              transparent 100%),
+            radial-gradient(1250px circle at 100% 100%,
+              hsl(218, 41%, 45%) 15%,
+              hsl(218, 41%, 30%) 35%,
+              hsl(218, 41%, 20%) 75%,
+              hsl(218, 41%, 19%) 80%,
+              transparent 100%);
+             
+        }
+    
+        #radius-shape-1 {
+          height: 220px;
+          width: 220px;
+          top: -60px;
+          left: -130px;
+          background: radial-gradient(#44006b, #ad1fff);
+          overflow: hidden;
+        }
+    
+        #radius-shape-2 {
+          border-radius: 38% 62% 63% 37% / 70% 33% 67% 30%;
+          bottom: -150px;
+          right: -200px;
+          width: 300px;
+          height: 300px;
+          background: radial-gradient(#44006b, #ad1fff);
+          overflow: hidden;
+        }
+    
+        .bg-glass {
+          background-color: hsla(0, 0%, 100%, 0.9) !important;
+          backdrop-filter: saturate(200%) blur(25px);
+        }
+
+        .custom-purple-card {
+          min-width: 500px;
+          margin: 0 auto;
+        }
+
+        .vote-button button {
+          padding: 10px 20px;
+          background-color: #6b52ae;
+          color: yellow;
+          border: 1;
+          font-size: 16px;
+          border-radius: 4px;
+          transition: background-color 0.3s ease;
+        }
+    
+        .vote-button button:hover {
+          background-color: #8b69cf;
+        }
+    
+        
+    
+      </style>
+      <body style="background-color: pink;">
+<section >
+  <div class="container px-4 py-5 px-md-5 text-center text-lg-start my-5">
+    <div align="center">
+      <div class="col-lg-6 mb-5 mb-lg-0 position-relative">
+        <div id="radius-shape-1" class="position-absolute rounded-circle shadow-5-strong"></div>
+        <div id="radius-shape-2" class="position-absolute shadow-5-strong"></div>
+
+        <div class="card custom-purple-card" style="min-width: 500px;">
+          <div class="card-body px-4 py-5 px-md-5">
+            {% if error is defined %}
+            <div class="alert alert-danger" role="alert">
+              {{ error.messageKey|trans(error.messageData, 'security') }}
+            </div>
+            {% endif %}
+            
+            <form action="{{ path('login') }}" method="post">
+              
+              <div class="form-outline mb-4">
+                <label class="form-label" for="email" style="color:black;">Email address</label>
+                <input type="email" id="email" name="email" class="form-control" />
+
+                
+              </div>
+
+              
+              <div class="form-outline mb-4">
+                <label class="form-label" for="cin" style="color:black;">CIN</label>
+                <input type="password" id="cin" name="cin" class="form-control" />
+                
+              </div>
+
+              
+              <div class="text-center">
+                <button type="submit" class="btn btn-secondary btn-rounded" data-mdb-ripple-color="dark">Sign in</button>
+              </div>
+            </form>
+            
+            <br/><br/>
+            
+            <div class="vote-button">
+              <a href="/register">
+                <button type="button" class="btn btn-primary btn-rounded" data-mdb-ripple-color="dark">Registration</button>
+              </a>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      
+    </div>
+  </div>
+
+</section>
+</body>
+
+{% endblock %}

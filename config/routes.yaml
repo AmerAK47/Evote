@@ -1,0 +1,73 @@
+#index:
+#    path: /
+#    controller: App\Controller\DefaultController::index
+
+admin_index:
+  path: /admin
+  controller: App\Controller\AdminController::index
+
+user_index:
+  path: /user
+  controller: App\Controller\UserController::index
+
+sondage_index:
+  path: /sondage
+  controller: App\Controller\SondageController::index
+
+candidat_index:
+  path: /candidat
+  controller: App\Controller\CandidatController::index
+
+candidat_create:
+  path: /candidat/create
+  controller: App\Controller\CandidatController::create
+
+candidat_delete:
+  path: /candidat/{id}/delete
+  controller: App\Controller\CandidatController::delete
+
+ 
+
+sondage_create:
+    path: /sondage/create
+    controller: App\Controller\SondageController::create
+    methods: [GET, POST]
+
+sondage_delete:
+  path: /sondage/{id}/delete
+  controller: App\Controller\SondageController::delete
+
+
+vote_index:
+    path: /vote
+    controller: App\Controller\VoteController::index
+    methods: [GET, POST]
+
+registration:
+    path: /registration
+    controller: App\Controller\RegistrationController::register
+
+admin_home:
+    path: /admin
+    controller: App\Controller\AdminController::index
+
+user_home:
+    path: /home
+    controller: App\Controller\HomeController::index
+
+show:
+  path: /show
+  controller: App\Controller\ShowController::index
+  
+  
+
+
+vote_cast:
+    path: /vote/cast/{sondageId}/{candidatId}
+    controller: App\Controller\VoteController::cast
+
+show_vote:
+    path: /show/vote/{id}
+    controller: App\Controller\ShowController::vote
+
+

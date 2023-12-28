@@ -1,0 +1,383 @@
+{% extends 'user.html.twig' %}
+
+{% block title %}Home{% endblock %}
+
+{% block body %}
+
+  <header id="header" class="fixed-top ">
+    <div class=" d-flex align-items-center justify-content-between">
+    <div >
+       <img src="assets/img/voty.jpg" height="130px" width="120%" >
+        </div>
+      
+      <!-- <a href="index.html" class="logo"><img src="assets/img/logo.png" alt="" class="img-fluid"></a>-->
+
+      <nav id="navbar" class="navbar">
+        <ul>
+          <li><a class="nav-link scrollto active" href="#hero">Home</a></li>
+          <li><a class="nav-link scrollto" href="#about">علاش</a></li>
+          <li><a class="nav-link scrollto" href="#testimonials">رأسائنا</a></li>
+            <li><a class="nav-link scrollto" href="#contact">كنتكتينا</a></li>
+          <li class="dropdown"><a href="#"><span>انزل </span> <i class="bi bi-chevron-down"></i></a>
+            <ul>
+              <li><a href="/login">ادخل</a></li>
+                  <li><a href="/register">سجل</a></li>
+                  <li><a href="/login">اخرج</a></li>
+            </ul>
+          </li>
+          
+          <li><a class="getstarted scrollto" href="#about">Read more</a></li>
+        </ul>
+        <i class="bi bi-list mobile-nav-toggle"></i>
+      </nav>
+
+    </div>
+  </header>
+
+  
+  <section id="hero" class="d-flex align-items-center">
+
+    <div class="container-fluid" data-aos="fade-up">
+      <div class="row justify-content-center">
+        <div class="col-xl-5 col-lg-6 pt-3 pt-lg-0 order-2 order-lg-1 d-flex flex-column justify-content-center text-center">
+          <h1 style="color:yellow;"> !! عسلامة</h1>
+          <h2>انتخب باش يكون غدوا خير</h2>
+           <div style="display: flex; flex-direction: column; ">
+    <a href="/typeelection" class="btn-get-started scrollto" style="text-align: center;">الانتخابات <br> élections</a> 
+  </div>
+</div>
+
+       <div class="col-xl-4 col-lg-6 order-1 order-lg-2 hero-img" data-aos="zoom-in" data-aos-delay="150">
+   <video width="100%" height="auto"  autoplay controls loop >
+        <source src="/vid/vv.mp4" type="video/mp4">
+       
+      </video>
+   
+      
+</div>
+</div>
+</div>
+
+
+  </section>
+
+  <main id="main">
+
+   
+    <section id="about" class="about">
+      <div class="container">
+
+        <div class="row">
+          <div class="col-lg-6 order-1 order-lg-2" data-aos="zoom-in" data-aos-delay="150">
+            <img src="assets/img/mal.png" class="img-fluid" alt="">
+          </div>
+          <div class="col-lg-6 pt-4 pt-lg-0 order-2 order-lg-1 content" data-aos="fade-right">
+            <h3>علاش صنعنالكم الموقع هاذا </h3>
+            <p class="fst-italic">
+             برشة عباد خاصة الشباب يقولك "تيه باللهي علاش بش نمشي ننتخب ؟" 
+الإنتخاب حق كل تونسي و تونسية و مهم أن كل واحد فينا يمارس حقو فالانتخاب أما الإنتخاب واجب زادة!. من حق كل تونسي يختار الممثل متاعو و إلي بش يدافع على القضاية إلي تهمو 
+<br>
+الفصل 3 من الدستور يقول :
+
+   "الشعب هو صاحب السيادة و مصدر السلطات ؛ يمارسها بواسطة ممثليه المنتخبين أو عرب الإستفتاء "
+            </p>
+            <ul>
+               <li>باش انت وغيرك تنتخب من غير تعب (التونسي بخيل) <i class="bi bi-check-circle"></i></li>
+              <li> باش تبدل الفوضى إلى نظام و قانون <i class="bi bi-check-circle"></i></li>
+             <li>باش تبدل التعطيل إلى إجراءات <i class="bi bi-check-circle"></i></li>
+            </ul>
+           
+          </div>
+        </div>
+
+      </div>
+    </section>
+
+    
+    <section id="counts" class="counts">
+      <div class="container">
+
+        <div class="row counters">
+
+          <div class="col-lg-3 col-6 text-center">
+            <span data-purecounter-start="0" data-purecounter-end=" 7200 " data-purecounter-duration="1" class="purecounter"></span>
+            <p>عدد السكان  من 18 سنة</p>
+          </div>
+
+          <div class="col-lg-3 col-6 text-center">
+            <span data-purecounter-start="0" data-purecounter-end="638" data-purecounter-duration="1" class="purecounter"></span>
+            <p>اكثر من 65 سنة</p>
+          </div>
+
+          <div class="col-lg-3 col-6 text-center">
+            <span data-purecounter-start="0" data-purecounter-end="729" data-purecounter-duration="1" class="purecounter"></span>
+            <p>ما بين عمر 55 و 65 سنة</p>
+          </div>
+
+          <div class="col-lg-3 col-6 text-center">
+            <span data-purecounter-start="0" data-purecounter-end="4017" data-purecounter-duration="1" class="purecounter"></span>
+            <p>ما بين عمر 18 و 54 سنة</p>
+          </div>
+
+        </div>
+
+      </div>
+    </section>
+
+   
+
+    
+
+
+    <section id="testimonials" class="testimonials section-bg">
+      <div class="container" data-aos="fade-up">
+
+        <div class="section-title">
+          <h2>رأسائنا</h2>
+          <p>تونس شهدت عدة رؤساء على مر التاريخ. هاذم أمثلة على الرؤساء الي حكموا تونس</p>
+        </div>
+
+        <div class="testimonials-slider swiper" data-aos="fade-up" data-aos-delay="100">
+          <div class="swiper-wrapper">
+
+            <div class="swiper-slide">
+              <div class="testimonial-item">
+                <p>
+                  <i class="bx bxs-quote-alt-left quote-icon-left"></i>
+                  المساهمة في تأسيس الاتحاد العام التونسي للشغل (UGTT)  بورقيبة من أبرز المؤسسين للاتحاد العام التونسي للشغل، الذي يعتبر أحد أهم منظمات العمل في 
+                  تونس و  أسس حزب الحركة الناصرية  و شارك بورقيبة في الحركة الوطنية التونسية للحرية والاستقلال عن الاستعمار الفرنسي. قاد وتنظم العديد من النضالات والحملات من أجل الحرية والسيادة الوطنية  
+                  <i class="bx bxs-quote-alt-right quote-icon-right"></i>
+                </p>
+                <img src="assets/img/testimonials/test1.jpg" class="testimonial-img" alt="">
+                <h3>الحبيب بورقيبة</h3>
+                
+              </div>
+            </div>
+
+            <div class="swiper-slide">
+              <div class="testimonial-item">
+                <p>
+                  <i class="bx bxs-quote-alt-left quote-icon-left"></i>
+                  شغل بن علي عدة مناصب وزارية في حكومات تونس، بما في ذلك وزارة الداخلية ووزارة الدفاع
+                  <i class="bx bxs-quote-alt-right quote-icon-right"></i>
+                </p>
+                <img src="assets/img/testimonials/test2.jpg" class="testimonial-img" alt="">
+                <h3> زين العابدين بن علي </h3>
+                
+              </div>
+            </div>
+
+            <div class="swiper-slide">
+              <div class="testimonial-item">
+                <p>
+                  <i class="bx bxs-quote-alt-left quote-icon-left"></i>
+                  شغل الباجي قايد السبسي عدة مناصب وزارية في حكومات تونس، بما في ذلك وزارة الداخلية ووزارة الدفاع، حيث قدم خدماته في تعزيز الأمن والاستقرار في البلاد
+كان الباجي قايد السبسي من أنصار حقوق العمال والنقابات، وعمل على تعزيز حقوق العمال وتوفير بيئة عمل عادلة ومستدامة 
+  شارك  في الحركة الوطنية للتحرير التونسية ضد الاستعمار الفرنسي، وكان ناشطًا في الحزب الناصري الذي كان يقود النضال من أجل الاستقلال و
+عمل  على تحقيق الاستقلال التونسي والقضاء على الاستعمار الفرنسي، وساهم في الانتصارات السياسية والدبلوماسية للحصول على السيادة الوطنية
+
+                  <i class="bx bxs-quote-alt-right quote-icon-right"></i>
+                </p>
+                <img src="assets/img/testimonials/test3.jpg" class="testimonial-img" alt="">
+                <h3>الباجي قايد السبسي</h3>
+                
+              </div>
+            </div>
+
+            <div class="swiper-slide">
+              <div class="testimonial-item">
+                <p>
+                  <i class="bx bxs-quote-alt-left quote-icon-left"></i>
+                  كان المنصف المرزوقي ناشطًا سياسيًا وحقوقيًا قبل توليه الرئاسة. شارك في الحركة النقابية والنضال من أجل الديمقراطية وحقوق الإنسان في تونس
+ شغل  عدة مناصب وزارية في حكومات تونس. كان وزيرًا للثقافة والشباب والرياضة في الفترة من 1984 إلى 1986، ووزيرًا للشؤون الخارجية من 2011 إلى 2013
+ شارك  بشكل فعّال في الثورة التونسية التي بدأت في عام 2010. كان أحد قادة حركة النهضة الإسلامية ولعب دورًا هامًا في الانتقال الديمقراطي في تونس 
+  و يعتبر  من الشخصيات الرئيسية في الدفاع عن حقوق الإنسان وتعزيز الديمقراطية في تونس. كان له مساهمات مهمة في تعزيز الحريات الأساسية وحقوق  المرأة والحريات الدينية
+  و خلال فترة رئاسته لتونس من 2011 إلى 2014، قاد المنصف المرزوقي عملية الانتقال الديمقراطي والتعايش السياسي في البلاد
+
+
+                  <i class="bx bxs-quote-alt-right quote-icon-right"></i>
+                </p>
+                <img src="assets/img/testimonials/test4.jpg" class="testimonial-img" alt="">
+                <h3>المنصف المرزوقي</h3>
+              
+              </div>
+            </div>
+
+            <div class="swiper-slide">
+              <div class="testimonial-item">
+                <p>
+                  <i class="bx bxs-quote-alt-left quote-icon-left"></i>
+                  قيس سعيّد عمل كأستاذ جامعي في القانون الدستوري بكلية الحقوق بجامعة تونس. لقد قام بتدريس ومناقشة مجموعة من المواضيع المتعلقة بالدستور والحقوق والعلوم السياسية
+و لقد كتب قيس سعيّد العديد من الكتب والدراسات في مجال القانون والدستور والعلوم السياسية. تتناول أعماله قضايا مختلفة مثل النظام السياسي التونسي والدولة والمواطنة
+  و قام بالمشاركة في العديد من النشاطات الثقافية والاجتماعية في تونس. وقد تضمنت هذه النشاطات المحاضرات والندوات والمناقشات حول القضايا السياسية والاجتماعية والثقافية.
+                  <i class="bx bxs-quote-alt-right quote-icon-right"></i>
+                </p>
+                <img src="assets/img/testimonials/test5.jpg" class="testimonial-img" alt="">
+                <h3>قيس سعيّد</h3>
+               
+              </div>
+            </div>
+
+          </div>
+          <div class="swiper-pagination"></div>
+        </div>
+
+      </div>
+    </section>
+
+
+  
+
+    
+    <section id="faq" class="faq">
+      <div class="container" data-aos="fade-up">
+
+        <div class="section-title">
+          <h2>الاسائلة لي تنجم تجي لمخك</h2>
+          <p>هاذوما اسئلة تنجم تعاونكم </p>
+        </div>
+
+        <div class="faq-list">
+          <ul>
+            <li data-aos="fade-up" data-aos="fade-up" data-aos-delay="100">
+              <i class="bx bx-help-circle icon-help"></i> <a data-bs-toggle="collapse" class="collapse" data-bs-target="#faq-list-1">!! احنا شكون <i class="bx bx-chevron-down icon-show"></i><i class="bx bx-chevron-up icon-close"></i></a>
+              <div id="faq-list-1" class="collapse show" data-bs-parent=".faq-list">
+                <p>
+أحنا مجموعة من الطلبة سنة ثانية إختصاص تطوير الويب بالمعهد العالي للدراسات التكنولوجية بباجة                </p>
+              </div>
+            </li>
+
+            <li data-aos="fade-up" data-aos-delay="200">
+              <i class="bx bx-help-circle icon-help"></i> <a data-bs-toggle="collapse" data-bs-target="#faq-list-2" class="collapsed">علاش نتخب ؟ <i class="bx bx-chevron-down icon-show"></i><i class="bx bx-chevron-up icon-close"></i></a>
+              <div id="faq-list-2" class="collapse" data-bs-parent=".faq-list">
+                <p>
+-نكون عبد يشارك في إتخاذ القرارات و نساهم في تقدم تونس و نكون واعي و نشارك في الحياة المدنية لضمان عيشة باهية ليا و ليك و لينا الكل
+                </p>
+              </div>
+            </li>
+
+            <li data-aos="fade-up" data-aos-delay="300">
+              <i class="bx bx-help-circle icon-help"></i> <a data-bs-toggle="collapse" data-bs-target="#faq-list-3" class="collapsed"> كيفاش نسجل ؟ <i class="bx bx-chevron-down icon-show"></i><i class="bx bx-chevron-up icon-close"></i></a>
+              <div id="faq-list-3" class="collapse" data-bs-parent=".faq-list">
+                <p> أول حاجة يلزم تكون عندمك بطاقة
+ تعريف تدخل لموقع  لي تعمل على ذمتكم و  ودخل معلومات 
+ متاعك و تتعدى تول تختار المترشح و تسجل إختيارك
+                </p>
+              </div>
+            </li>
+
+            <li data-aos="fade-up" data-aos-delay="400">
+              <i class="bx bx-help-circle icon-help"></i> <a data-bs-toggle="collapse" data-bs-target="#faq-list-4" class="collapsed">قداش من مرة نجم ننتخب ؟<i class="bx bx-chevron-down icon-show"></i><i class="bx bx-chevron-up icon-close"></i></a>
+              <div id="faq-list-4" class="collapse" data-bs-parent=".faq-list">
+                <p>
+                 كل عبد عندو الحق باش ينتخب مرة وحدة باش تكون عملية الانتخاب شفافة و نزيهة و إذا حصلت إخترت مترشح معادش تنجم تبدل
+                </p>
+              </div>
+            </li>
+
+            <li data-aos="fade-up" data-aos-delay="500">
+              <i class="bx bx-help-circle icon-help"></i> <a data-bs-toggle="collapse" data-bs-target="#faq-list-5" class="collapsed">قداش العمر إلي نجم ننتخب فيه ؟ <i class="bx bx-chevron-down icon-show"></i><i class="bx bx-chevron-up icon-close"></i></a>
+              <div id="faq-list-5" class="collapse" data-bs-parent=".faq-list">
+                <p>
+                  يلزمك ما تكونش أقل من 18 باش تنجم تتمتع بحقك الأنتخابي
+                </p>
+              </div>
+            </li>
+
+             <li data-aos="fade-up" data-aos-delay="400">
+              <i class="bx bx-help-circle icon-help"></i> <a data-bs-toggle="collapse" data-bs-target="#faq-list-4" class="collapsed">شنوة فائدة التسجيل عن بعد ؟<i class="bx bx-chevron-down icon-show"></i><i class="bx bx-chevron-up icon-close"></i></a>
+              <div id="faq-list-4" class="collapse" data-bs-parent=".faq-list">
+                <p>
+التسجيل عن بعد يخليك تنحي البخل و يربحك وقت التنقل و يخليك تنتخب وين ما كنت إنتي  
+                </p>
+              </div>
+            </li>
+
+          </ul>
+        </div>
+
+      </div>
+    </section>
+
+    
+    <section id="contact" class="contact section-bg">
+      <div class="container" data-aos="fade-up">
+
+        <div class="section-title">
+          <h2>كنتكتينا</h2>
+          
+        </div>
+
+        <div class="row">
+          <div class="col-lg-6">
+            <div class="info-box mb-4">
+              <i class="bx bx-map"></i>
+              <h3> Address</h3>
+              <p>Hay manar 1, Beja , NY270</p>
+            </div>
+          </div>
+
+          <div class="col-lg-3 col-md-6">
+            <div class="info-box  mb-4">
+              <i class="bx bx-envelope"></i>
+              <h3>Email </h3>
+              <p>voty@gmailcom</p>
+            </div>
+          </div>
+
+          <div class="col-lg-3 col-md-6">
+            <div class="info-box  mb-4">
+              <i class="bx bx-phone-call"></i>
+              <h3>Call </h3>
+              <p>21222222</p>
+            </div>
+          </div>
+
+        </div>
+
+        <div class="row">
+
+          <div class="col-lg-6 ">
+            <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d2552.229912746101!2d9.167002615709933!3d36.72970807888127!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x12fb588073d15b35%3A0x67e6f1f9d0f178b2!2sInstitut%20sup%C3%A9rieur%20des%20%C3%A9tudes%20technologiques%20de%20B%C3%A9ja!5e0!3m2!1sen!2stn!4v1621692849843!5m2!1sen!2stn" width="600" height="450" style="border:0;" allowfullscreen="" loading="lazy"></iframe>
+
+
+          </div>
+
+          <div class="col-lg-6">
+            <form action="forms/contact.php" method="post" role="form" class="php-email-form">
+              <div class="row">
+                <div class="col-md-6 form-group">
+                  <input type="text" name="name" class="form-control" id="name" placeholder="Your Name" required>
+                </div>
+                <div class="col-md-6 form-group mt-3 mt-md-0">
+                  <input type="email" class="form-control" name="email" id="email" placeholder="Your Email" required>
+                </div>
+              </div>
+              <div class="form-group mt-3">
+                <input type="text" class="form-control" name="subject" id="subject" placeholder="Subject" required>
+              </div>
+              <div class="form-group mt-3">
+                <textarea class="form-control" name="message" rows="5" placeholder="Message" required></textarea>
+              </div>
+              <div class="my-3">
+                <div class="loading">Loading</div>
+                <div class="error-message"></div>
+                <div class="sent-message">Your message has been sent. Thank you!</div>
+              </div>
+              <div class="text-center"><button type="submit">Send Message</button></div>
+            </form>
+          </div>
+
+        </div>
+
+      </div>
+    </section>
+
+  </main>
+
+  
+
+  <a href="#" class="back-to-top d-flex align-items-center justify-content-center"><i class="bi bi-arrow-up-short"></i></a>
+  <div id="preloader"></div>
+
+{% endblock %}

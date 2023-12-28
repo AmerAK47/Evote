@@ -1,0 +1,150 @@
+{% extends 'user.html.twig' %}
+
+{% block title %}Vote{% endblock %}
+
+{% block stylesheets %}
+  {{ parent() }}
+  <style>
+    body {
+      background-color: #f5f5f5;
+      color: #333;
+      font-family: Arial, sans-serif;
+      margin: 0;
+      padding: 0;
+      display:auto;
+    }
+
+    #hero {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      height: 100vh;
+      background-color: #6b52ae;
+      color: #fff;
+    }
+
+    .container {
+      max-width: 800px;
+      margin: 0 auto;
+      padding: 20px;
+      text-align: center;
+    }
+
+    h2 {
+      font-size: 36px;
+      margin-bottom: 20px;
+    }
+
+    h3 {
+      font-size: 24px;
+      margin-bottom: 10px;
+    }
+
+    ul {
+      list-style: none;
+      padding: 0;
+      margin: 0;
+    }
+
+    li {
+      margin-bottom: 20px;
+      border: 1px solid #ddd;
+      padding: 20px;
+      border-radius: 4px;
+    }
+
+    h5 {
+      font-size: 20px;
+      margin-bottom: 10px;
+    }
+
+    p {
+      font-size: 16px;
+      margin-bottom: 10px;
+    }
+
+    .vote-button button {
+      padding: 10px 20px;
+      background-color: #6b52ae;
+      color: yellow;
+      border: 1;
+      font-size: 16px;
+      border-radius: 4px;
+      transition: background-color 0.3s ease;
+    }
+
+    .vote-button button:hover {
+      background-color: #8b69cf;
+    }
+
+    .candidate-row {
+      display: flex;
+      justify-content: space-between;
+    }
+    
+    .candidate {
+      width: calc(40% - 30px); 
+      border: 1px solid #ddd;
+      padding: 60px;
+      border-radius: 10px;
+      margin-bottom: 20px;
+    }
+  </style>
+{% endblock %}
+
+{% block body %}
+  <section id="hero">
+    <section class="container">
+      <h2>Votez pour Sondage: <span style="color:yellow;"><u>{{ sondage.nom }}</u></span></h2>
+      <section class="container">
+        <h3>Candidats:</h3>
+        {% set candidateCount = sondage.candidats|length %}
+        {% set columns = 3 %}
+        {% set rowCount = (candidateCount / columns)|round(0, 'ceil') %}
+        {% set index = 0 %}
+        {% for row in 1..rowCount %}
+          <div class="candidate-row">
+            {% for column in 1..columns %}
+              {% if index < candidateCount %}
+                {% set candidat = sondage.candidats[index] %}
+                <div class="candidate">
+                  <div>
+                    <div>
+                      <h5>{{ candidat.nom }} {{ candidat.prenom }}</h5>
+                      <p>{{ candidat.informations }}</p>
+                    </div>
+                    <div class="vote-button">
+                      <button data-candidat-id="{{ candidat.id }}">Votez</button>
+                    </div>
+                  </div>
+                </div>
+              {% endif %}
+              {% set index = index + 1 %}
+            {% endfor %}
+          </div>
+        {% endfor %}
+      </section>
+    </section>
+  </section>
+
+  <script>
+    
+    document.addEventListener('DOMContentLoaded', function () {
+      const voteButtons = document.querySelectorAll('.vote-button button');
+
+      voteButtons.forEach(function (button) {
+        button.addEventListener('click', function (event) {
+          event.preventDefault();
+          const candidatId = button.getAttribute('data-candidat-id');
+          const confirmVote = confirm("Êtes-vous sûr de voter pour ce candidat ?");
+
+          if (confirmVote) {
+            const voteCastPath = "{{ path('vote_cast', {'sondageId': sondage.id, 'candidatId': 'CANDIDAT_ID'}) }}";
+            const redirectPath = voteCastPath.replace('CANDIDAT_ID', candidatId);
+            window.location.href = redirectPath;
+          }
+        });
+      });
+    });
+  </script>
+{% endblock %}

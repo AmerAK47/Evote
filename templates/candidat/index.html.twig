@@ -1,0 +1,95 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}Candidat Page{% endblock %}
+
+{% block content %}
+<div class="container">
+    <div class="header">
+        <h1>Candidat Page</h1>
+    </div>
+
+    <div class="container-fluid pt-4 px-4">
+        <div class="row g-4">
+            <div class="col-12">
+                <div class="bg-secondary rounded h-100 p-4">
+                    <h2>Ajouter nouveau Candidat</h2>
+
+                    <form method="POST" action="{{ path('candidat_create') }}">
+                        <div class="form-group">
+                            <label for="nom">Nom:</label>
+                            <input type="text" id="nom" name="nom" class="form-control" required>
+                        </div>
+
+                        <div class="form-group">
+                            <label for="prenom">Prenom:</label>
+                            <input type="text" id="prenom" name="prenom" class="form-control" required>
+                        </div>
+
+                        <div class="form-group">
+                            <label for="informations">Informations:</label>
+                            <textarea id="informations" name="informations" class="form-control"></textarea>
+                        </div>
+
+                        <div class="form-group">
+                            <label for="sondage">Sondage:</label>
+                            <select id="sondage" name="sondage" class="form-control">
+                                {% for sondage in sondages %}
+                                    <option value="{{ sondage.id }}">{{ sondage.nom }}</option>
+                                {% endfor %}
+                            </select>
+                        </div>
+                        <br>
+                        <button type="submit" class="btn btn-primary">Ajouter Candidat</button>
+                    </form>
+
+                    <br>
+
+                    <a href="{{ path('admin_index') }}" class="btn btn-success"><i class="bi bi-hand-index-thumb"></i>Retourner pour Admin</a>
+                </div>
+            </div>
+        </div>
+     <br>
+        <div class="row justify-content-center">
+            <div class="col-12">
+                <div class="bg-secondary rounded h-100 p-4">
+                    <h2>Candidats Liste</h2>
+
+                    {% if candidats is empty %}
+                        <p>Non candidats trouver.</p>
+                    {% else %}
+                        <table class="table">
+                            <thead>
+                                <tr>
+                                    <th>ID</th>
+                                    <th>Nom:</th>
+                                    <th>Prenom:</th>
+                                    <th>Informations:</th>
+                                    <th>Sondage:</th>
+                                    <th>Actions:</th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                {% for candidat in candidats %}
+                                    <tr>
+                                        <td>{{ candidat.id }}</td>
+                                        <td>{{ candidat.nom }}</td>
+                                        <td>{{ candidat.prenom }}</td>
+                                        <td>{{ candidat.informations }}</td>
+                                        <td>{{ candidat.sondage.nom }}</td>
+                                        <td>
+                                            <a href="{{ path('candidat_edit', {'id': candidat.id}) }}" class="btn btn-primary">Modifier</a>
+                                            <a href="{{ path('candidat_delete', {'id': candidat.id}) }}" class="btn btn-danger" onclick="return confirm('etes-vous sur de supprimer ce candidat?')">Supprimer</a>
+                                        </td>
+                                    </tr>
+                                {% endfor %}
+                            </tbody>
+                        </table>
+                        <br>
+                        <br>
+                    {% endif %}
+                </div>
+            </div>    
+        </div>     
+    </div>
+</div>
+{% endblock %}

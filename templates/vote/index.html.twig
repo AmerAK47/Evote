@@ -1,0 +1,46 @@
+{% extends 'base.html.twig' %}
+
+{% block content %}
+<br>
+<br>
+<br>
+    <div class="container">
+        <div class="row justify-content-center">
+             <div class="col-12">
+                <div class="bg-secondary rounded h-100 p-4">
+                    
+
+                    <div class="text-center">
+                        <table class="table" id="candidatsTable">
+                            <thead>
+                                <tr>
+                                    <th>Candidat</th>
+                                    <th>Sondage</th>
+                                    <th>Votes</th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                {% for candidat in candidats %}
+                                    <tr>
+                                        <td>{{ candidat.nom }} {{candidat.prenom}}</td>
+                                        <td>{{ candidat.sondage.nom }}</td>
+                                        <td>{{ candidat.voteCount }}</td>
+                                    </tr>
+                                {% endfor %}
+                            </tbody>
+                        </table>
+                    </div>
+
+                  
+            </div>
+              <br>
+                  <a href="{{ path('admin_index') }}" class="btn btn-primary">
+                        <i class="bi bi-hand-index-thumb"></i> Retourner Admin
+                    </a>
+                </div>
+        </div>
+    </div>
+
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+    
+{% endblock %}

@@ -1,0 +1,58 @@
+{% extends 'base.html.twig' %}
+
+
+
+
+
+{% block content %}
+<br><br>
+    <div class="container">
+        <h1>Tous les utilisateurs</h1>
+        
+        <br> <br>
+ 
+         <div class="row justify-content-center">
+         <div class="col-12">
+                <div class="bg-secondary rounded h-100 p-4">
+           
+
+                    <div class="text-center">
+        <table class="table">
+            <thead>
+                <tr>
+                    <th>CIN</th>
+                    <th>Nom</th>
+                    <th>Prénom</th>
+                    <th>Email</th>
+                    <th>Genre</th>
+                    <th>Resident</th>
+                    <th>Lieu</th>
+                </tr>
+            </thead>
+            <tbody>
+                {% for user in users %}
+                    <tr>
+                        <td>{{ user.cin }}</td>
+                        <td>{{ user.nom }}</td>
+                        <td>{{ user.prenom }}</td>
+                        <td>{{ user.email }}</td>
+                        <td>{{ user.gender }}</td>
+                        <td>{{ user.resident }}</td>
+                        <td>{{ user.city }}</td>
+                    </tr>
+                {% endfor %}
+            </tbody>
+        </table>
+    </div>
+       
+            </div>
+              <br>
+                  <a href="{{ path('admin_index') }}" class="btn btn-primary">
+                        <i class="bi bi-hand-index-thumb"></i> Retourner Admin
+                    </a>
+                </div>
+        </div>
+    </div>
+{% endblock %} 
+
+

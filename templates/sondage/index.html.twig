@@ -1,0 +1,70 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}Sondage Page{% endblock %}
+
+{% block content %}
+<div class="container">
+    <br>
+    <br>
+    <div class="container-fluid pt-4 px-4">
+        <div class="row g-4">
+            <div class="col-12">
+                <div class="bg-secondary rounded h-100 p-4">
+        <h2>Add New Sondage</h2>
+
+        <form method="POST" action="{{ path('sondage_create') }}">
+            <div class="form-group">
+                <label for="nom">Nom:</label>
+                <input type="text" id="nom" name="nom" class="form-control" required>
+            </div>
+
+            <div class="form-group">
+                <label for="date">Date:</label>
+                <input type="date" id="date" name="date" class="form-control" required>
+            </div>
+         <br>
+            <button type="submit" class="btn btn-primary">Ajout Sondage</button>
+        </form>
+
+        <br>
+           <a href="{{ path('admin_index') }}" class="btn btn-success"><i class="bi bi-hand-index-thumb"></i>Retourner Admin</a>
+                </div>
+            </div>
+        </div> 
+     <br>
+
+     <div class="container">
+        <div class="row justify-content-center">
+             <div class="col-12">
+                <div class="bg-secondary rounded h-100 p-4">
+        <h2>Sondages Listes</h2>
+
+        <table class="table">
+            <thead>
+                <tr>
+                    <th>ID</th>
+                    <th>Nom</th>
+                    <th>Date</th>
+                    <th>Actions</th>
+                </tr>
+            </thead>
+            <tbody>
+                {% for sondage in sondages %}
+                    <tr>
+                        <td>{{ sondage.id }}</td>
+                        <td>{{ sondage.nom }}</td>
+                        <td>{{ sondage.date|date('Y-m-d') }}</td>
+                        <td>
+                            <a href="{{ path('sondage_edit', {'id': sondage.id}) }}" class="btn btn-primary">Modifier</a>
+                            <a href="{{ path('sondage_delete', {'id': sondage.id}) }}" class="btn btn-danger" onclick="return confirm('Etes-vous sur pour supprimer ce sondage?')">Supprimer</a>
+                        </td>
+                    </tr>
+                {% endfor %}
+            </tbody>
+        </table>
+        
+     </div>
+</div>
+</div>
+</div>
+{% endblock %}

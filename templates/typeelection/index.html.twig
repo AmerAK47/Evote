@@ -1,0 +1,66 @@
+{% extends 'user.html.twig' %}
+
+{% block title %}Type de Election{% endblock %}
+
+{% block body %}
+
+<section id="hero" class="d-flex align-items-center justify-content-center" style="height: 100vh;">
+   
+    <a href="/home" class="btn-get-started scrollto" style="text-align: center;">
+    <i class="bi bi-box-arrow-left"></i> ارجع
+  </a>
+      
+    
+  <div class="container">
+    <div class="row justify-content-center">
+      <div class="col-md-7 my-auto">
+        <div class="lc-block">
+          <div class="ratio ratio-16x9" lc-helper="video-embed">
+            <video autoplay loop controls>
+              <source src="/vid/maha.mp4" type="video/mp4">
+            </video>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="row mt-3">
+      
+      <div class="col-md-4">
+        <div class="card text-white bg-dark">
+          <div class="card-header text-center">الانتخابات الرئاسية</div>
+          <div class="card-body">
+            <p class="card-text text-primary font-italic">الانتخابات الرئاسية التونسية 2024 هي الانتخابات الرئاسية الثانية عشرة في تونس والثالثة بعد الثورة و باش ينتخب رئيس الجمهورية الثامن في تاريخ البلاد التونسية مدتها 5 سنوات حسب ما ذكره الفصل التسعون من الدستور</p>
+          </div>
+        </div>
+      </div>
+      
+      <div class="col-md-4">
+        <div class="card border-secondary">
+          <div class="card-header text-center  text-primary font-italic">الانتخابات البلدية</div>
+          <div class="card-body">
+            <p class="card-text">الانتخابات البلدية في تونس تمكن بانتخاب أعضاء المجلس البلدي في كل بلدية ويتسموا مستشارين بلديين، وهم يقومون بانتخاب رئيس البلدية لمدة خمسة سنوات</p>
+          </div>
+        </div>
+      </div>
+    
+      <div class="col-md-4">
+        <div class="card text-white bg-dark ">
+          <div class="card-header text-center ">الانتخابات التشريعية</div>
+          <div class="card-body">
+            <p class="card-text text-primary font-italic">الانتخابات التشريعية التونسية 2024 أو الانتخابات التشريعية التونسية المبكرة 2024 هي الانتخابات التشريعية
+              الثانية عشر في تونس والرابعة بعد الثورة التونسية، ولي يكون فيها انتخاب مجلس نواب الشعب التونسي في مدته النيابية الثالثة على دورتين
+            </p>
+          </div>
+        </div>
+     </div>
+   </div>
+    
+    <div align="center">
+   <a href="{{ path('show') }}" class="btn-get-started scrollto " >إنتخب</a>
+    </div>
+    
+     
+  </div>
+</section>
+
+{% endblock %}

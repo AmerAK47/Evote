@@ -1,0 +1,103 @@
+{% extends 'user.html.twig' %}
+
+{% block title %}Sondages{% endblock %}
+
+
+    
+
+ 
+{% block body %}
+<style>
+    .card-container {
+        display: flex;
+        justify-content: flex-end;
+      }
+      
+      .card {
+        width: 50%;
+      }
+
+        .card-body {
+            background-color: #ffffff;
+            padding: 15px;
+            border-radius: 5px;
+            box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+        }
+
+        .vote-button button {
+          padding: 10px 20px;
+          background-color: #6b52ae;
+          color: yellow;
+          border: 1;
+          font-size: 16px;
+          border-radius: 4px;
+          transition: background-color 0.3s ease;
+        }
+    
+        .vote-button button:hover {
+          background-color: #8b69cf;
+        }
+    </style>
+   
+
+<section id="hero" class="d-flex align-items-center justify-content-center" style="height: 100vh;">
+    <a href="/typeelection" class="btn-get-started scrollto" style="text-align: center;">
+        <i class="bi bi-box-arrow-left"></i> ارجع
+    </a>
+
+    <section id="sondages" class="container">
+        <h1 class="text-center mb-4">Les sondages valides :</h1>
+
+        {% for sondage in sondages %}
+       
+                {% set maxVotes = 0 %}
+                {% set candidateNom = '' %}
+                {% set candidatePrenom = '' %}
+                {% for candidat in sondage.candidats %}
+                    {% if candidat.VoteCount > maxVotes %}
+                        {% set maxVotes = candidat.VoteCount %}
+                        {% set candidatePrenom = candidat.prenom %}
+                        {% set candidateNom = candidat.nom %}
+                    {% endif %}
+                {% endfor %}
+               
+                   
+              
+    
+              
+                    <div class="card-container" align="center">
+                        
+                        <div class="card">
+                          <div class="card-body">
+                            <h5 class="card-title">{{ sondage.nom }}</h5>
+                            <p class="card-text">{{ sondage.date|date('Y-m-d') }}</p>
+                            <div class="vote-button">
+                            <button  onclick="location.href='{{ path('show_vote', {'id': sondage.id}) }}'">
+                              Accéder au Sondage
+                            </button>
+                          </div>
+
+
+                          </div>
+                        </div>
+                        <div class="card" align="center">
+                          <div class="card-body">
+                            <h5 class="card-title">Gagnant :</h5><p class="card-text">{{ candidateNom }} {{ candidatePrenom }}</p>
+                                <h5 class="card-title">Votes : </h5><p class="card-text" style="color:purple;">{{ maxVotes }}</p>
+                          </div>
+                        </div>
+                      </div>
+                      
+                  </div>
+                  
+        
+            
+        
+        {% endfor %}
+
+        {% if sondages is empty %}
+        <p>il n'y a pas de sondages.</p>
+        {% endif %}
+    </section>
+</section>
+{% endblock %}

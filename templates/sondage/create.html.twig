@@ -1,0 +1,23 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}Creation Sondage{% endblock %}
+{% block content %}
+    <div class="container">
+        <h1>Ajouter Sondage</h1>
+        <a href="{{ path('sondage_index') }}" class="btn btn-primary">Retournez Sondages</a>
+        <br><br>
+        <form method="POST" action="{{ path('sondage_create') }}">
+            <div class="form-group">
+                <label for="nom">Nom:</label>
+                <input type="text" id="nom" name="nom" class="form-control" required>
+            </div>
+            <br>
+            <div class="form-group">
+                <label for="date">Date:</label>
+                <input type="date" id="date" name="date" class="form-control" required>
+            </div>
+            <br>
+            <button type="submit" class="btn btn-primary">Ajout Sondage</button>
+        </form>
+    </div>
+{% endblock %}

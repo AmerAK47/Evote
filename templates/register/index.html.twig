@@ -1,0 +1,130 @@
+{% extends 'user.html.twig' %}
+
+{% block title %}Registration{% endblock %}
+
+{% block body %}
+<style>
+  body {
+    background-color: pink;
+  }
+    
+  .vote-button button {
+    padding: 10px 20px;
+    
+    color: yellow;
+    border: 1;
+    font-size: 16px;
+    border-radius: 4px;
+    transition: background-color 0.3s ease;
+  }
+
+  .vote-button button:hover {
+    background-color: pink;
+  }
+</style>
+
+
+  <div class="container py-5 h-100">
+    <div class="row d-flex justify-content-center align-items-center h-100">
+      <div class="col">
+        <div class="card card-registration my-4">
+          <div class="row g-0">
+           <div class="col-xl-6 d-none d-xl-block">
+           <img src="{{ asset('/images/vote.png') }}" alt="Sample photo" class="img-fluid w-100" style="border-top-left-radius: .25rem; border-bottom-left-radius: .25rem; width: 100%; height: 100%;" />
+             </div>
+            <div class="col-xl-6">
+              <div class="card-body p-md-5 text-black">
+                <h3 class="mb-5 text-uppercase text-center">سجل لهنا </h3>
+             
+                {{ form_start(form) }}
+                <div class="row">
+                  <div class="col-md-6 mb-4">
+                    <div class="form-outline">
+                      {{ form_widget(form.nom, {'attr': {'class': 'form-control form-control-lg'} }) }}
+                      {{ form_label(form.nom, 'الاسم', {'label_attr': {'class': 'form-label'} }) }}
+                    </div>
+                  </div>
+                  <div class="col-md-6 mb-4">
+                    <div class="form-outline">
+                      {{ form_widget(form.prenom, {'attr': {'class': 'form-control form-control-lg'} }) }}
+                      {{ form_label(form.prenom, 'اللقب', {'label_attr': {'class': 'form-label'} }) }}
+                    </div>
+                  </div>
+                  
+                </div>
+
+            
+
+                <div class="form-outline mb-4">
+                  {{ form_widget(form.email, {'attr': {'class': 'form-control form-control-lg'} }) }}
+                  {{ form_label(form.email, 'الامايل متاعك', {'label_attr': {'class': 'form-label'} }) }}
+                </div>
+
+                <div class="form-outline mb-4">
+                    {{ form_widget(form.cin, {'attr': {'class': 'form-control form-control-lg'}, 'oninput': 'validateCIN(this)', 'onsubmit':'checkCINExists(this)'}) }}
+                    {{ form_label(form.cin, 'نومرو بطاقة تعريف', {'label_attr': {'class': 'form-label'} }) }}
+                </div>
+
+                <script>
+                    function validateCIN(input) {
+                        var cin = input.value.replace(/\D/g, ''); // Remove non-digit characters
+                        cin = cin.slice(0, 8); // Limit to 8 digits
+                        input.value = cin;
+                    }
+                
+                    // This function can be called when the form is submitted
+                    function checkCINExists(form) {
+                        var cinInput = form.cin;
+                        var cin = cinInput.value;
+                        if (cinAlreadyExists(cin)) {
+                            alert("This CIN is already registered. Please enter a different CIN.");
+                            event.preventDefault(); // Prevent form submission
+                        }
+                    }
+                </script>
+                
+                
+                
+                
+                
+
+                <div class="row">
+                  <div class="col-md-6 mb-4">
+                    {{ form_widget(form.resident, {'attr': {'class': 'form-select'} }) }}
+                    {{ form_label(form.resident, 'متغرب', {'label_attr': {'class': 'form-label'} }) }}
+                  </div>
+                  <div class="col-md-6 mb-4">
+                    {{ form_widget(form.city, {'attr': {'class': 'form-select'} }) }}
+                    {{ form_label(form.city, 'وين تسكن؟', {'label_attr': {'class': 'form-label'} }) }}
+                  </div>
+                </div>
+
+                <div class="d-md-flex justify-content-start align-items-center mb-4 py-2">
+                  
+                    <div class="form-check form-check-inline mb-0 me-4">
+                        {{ form_widget(form.gender, {'id': 'femaleGender', 'value': 'female' }) }}  
+                        {{ form_widget(form.gender, {'id': 'maleGender', 'value': 'male'  }) }}
+                      
+                    </div>
+                </div>
+                
+
+</div>
+
+                <div class="d-flex justify-content-end pt-3">
+                  <button type="reset" class="btn btn-light btn-lg">فسخ</button>
+                  <button type="submit" class="btn btn-danger btn-rounded">سجل</button>
+                  <div class="vote-button"><button class="btn btn-light btn-lg"><a href="/login">ادخل ديراكت</a></button>
+                  </div>
+                </div>
+   
+                {{ form_end(form) }}
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+
+{% endblock %}
